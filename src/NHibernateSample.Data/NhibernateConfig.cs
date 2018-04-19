@@ -17,15 +17,8 @@ namespace NHibernateSample.Data
         {
             var config = new Configuration();
 
-            //config.DataBaseIntegration(x =>
-            //{
-            //    x.IsolationLevel = IsolationLevel.ReadCommitted;
-            //    x.ConnectionString = $"Data Source=localhost;Initial Catalog=NHibernateSampleDb;Integrated Security=true;";
-            //    x.Dialect<MsSql2008Dialect>();
-            //    x.Driver<SqlClientDriver>();
-            //});
             config.Configure("NHibernate.config");
-            config.AddAssembly(Assembly.GetExecutingAssembly());
+            //config.AddAssembly(Assembly.GetExecutingAssembly());
 
             return config;
         }

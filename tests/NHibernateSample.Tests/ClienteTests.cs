@@ -31,11 +31,16 @@ namespace NHibernateSample.Tests
             var cliente = new Cliente("Teste NH", DateTime.Today);
             var servico = new ClienteServico();
             var nhDao = new TesteDao();
+            var options = new TransactionOptions()
+            {
+                IsolationLevel = IsolationLevel.ReadCommitted
+            };
 
-            using(var scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions(){IsolationLevel = IsolationLevel.ReadCommitted}))
+            using (var scope = new TransactionScope(TransactionScopeOption.Required, options))
             {
                 var retorno = servico.Inserir(cliente);
                 var teste = nhDao.Inserir(new Teste("Teste Descrição"));
+                //var teste = nhDao.Inserir(null);
 
                 Assert.AreNotEqual(0, retorno);
                 Assert.IsNotNull(teste);

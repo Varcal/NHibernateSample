@@ -2,8 +2,8 @@
 {
     public class Teste
     {
-        public virtual int Id { get; private set; }
-        public virtual string Descricao { get; private set; }
+        public virtual int Id { get; set; }
+        public virtual string Descricao { get; set;}
 
         protected Teste()
         {
