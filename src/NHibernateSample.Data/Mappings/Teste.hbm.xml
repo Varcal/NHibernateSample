@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="NHibernateSample.Data" namespace="NHibernateSample.Data.Entidades">
+  <class schema="dbo" name="Teste" table="Teste">
+    <id name="Id" column="Id" type="Int32" unsaved-value="0" >
+      <generator class="native" />
+    </id>
+    <property name="Descricao" type="String" not-null="true" />
+  </class>
+</hibernate-mapping>
